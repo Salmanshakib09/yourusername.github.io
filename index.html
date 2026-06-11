@@ -4,212 +4,324 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Salman Shakib</title>
+  <title>Salman Shakib | Statistics Portfolio</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background-color: #eef5f4;
-      color: #222;
+      font-family: "Georgia", "Times New Roman", serif;
+      background-color: #f5f7f8;
+      color: #1f2933;
     }
 
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 45px;
-      background-color: #eef5f4;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      background-color: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .site-name {
+    .brand {
       font-size: 30px;
       font-weight: bold;
+      letter-spacing: 0.5px;
+      color: #1f2933;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 24px;
     }
 
-    nav a, .dropbtn {
+    nav a,
+    .dropbtn {
       text-decoration: none;
-      color: #222;
-      font-size: 20px;
+      color: #1f2933;
+      font-size: 18px;
       font-weight: bold;
       background: none;
       border: none;
-      font-family: Georgia, "Times New Roman", serif;
       cursor: pointer;
+      font-family: Georgia, "Times New Roman", serif;
     }
 
-    nav a:hover, .dropbtn:hover {
-      color: #5a5f7d;
+    nav a:hover,
+    .dropbtn:hover {
+      color: #2563eb;
     }
 
     .dropdown {
       position: relative;
-      display: inline-block;
     }
 
     .dropdown-content {
       display: none;
       position: absolute;
-      background-color: white;
+      top: 28px;
+      right: 0;
+      background-color: #ffffff;
       min-width: 260px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-      z-index: 1001;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      border-radius: 8px;
       padding: 10px 0;
+      border: 1px solid #e5e7eb;
     }
 
     .dropdown-content a {
       display: block;
-      padding: 14px 22px;
-      color: #555;
-      font-size: 18px;
+      padding: 13px 20px;
+      font-size: 16px;
       font-weight: normal;
-      text-decoration: none;
+      color: #374151;
     }
 
     .dropdown-content a:hover {
-      background-color: #eef5f4;
-      color: #222;
+      background-color: #f3f4f6;
+      color: #2563eb;
     }
 
     .dropdown:hover .dropdown-content {
       display: block;
     }
 
-    .home-section {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .hero {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
       gap: 60px;
-      padding: 60px 90px;
-      background-color: #eef5f4;
+      align-items: center;
+      padding: 70px 110px;
+      background: linear-gradient(135deg, #eef4f7 0%, #ffffff 100%);
+    }
+
+    .profile-card {
+      display: flex;
+      justify-content: center;
     }
 
     .profile-img {
-      width: 420px;
-      height: 520px;
+      width: 390px;
+      height: 500px;
       object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
     }
 
-    .about-box {
-      max-width: 700px;
+    .hero-text h1 {
+      font-size: 50px;
+      margin: 0 0 10px;
+      color: #111827;
     }
 
-    .about-box h1 {
-      text-align: center;
-      font-size: 44px;
-      color: #5a5f7d;
-      margin-bottom: 35px;
+    .hero-text h2 {
+      font-size: 25px;
+      font-weight: normal;
+      color: #4b5563;
+      margin-bottom: 28px;
     }
 
-    .about-box p {
-      font-size: 21px;
+    .hero-text p {
+      font-size: 20px;
       line-height: 1.8;
       text-align: justify;
+      color: #374151;
     }
 
-    .icons {
-      text-align: center;
-      margin-top: 35px;
+    .quick-links {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
-    .icons a {
-      display: inline-block;
+    .quick-links a {
       text-decoration: none;
-      margin: 0 10px;
-      width: 50px;
-      height: 50px;
-      line-height: 50px;
-      border-radius: 50%;
-      color: white;
-      font-size: 18px;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 16px;
       font-weight: bold;
+      border: 1px solid #2563eb;
+      color: #2563eb;
+      background-color: white;
     }
 
-    .linkedin { background-color: #0a66c2; }
-    .researchgate { background-color: #00c896; }
-    .email { background-color: #666; }
-    .github { background-color: #222; }
-    .cvicon { background-color: #5a5f7d; }
+    .quick-links a:hover {
+      background-color: #2563eb;
+      color: white;
+    }
 
     section {
-      padding: 65px 120px;
-      background-color: white;
-      border-top: 1px solid #ddd;
+      padding: 70px 120px;
     }
 
-    section:nth-of-type(even) {
-      background-color: #eef5f4;
+    section:nth-child(even) {
+      background-color: #ffffff;
     }
 
-    section h2 {
+    section:nth-child(odd) {
+      background-color: #f5f7f8;
+    }
+
+    .section-title {
       text-align: center;
-      font-size: 36px;
-      color: #4f536f;
-      margin-bottom: 30px;
+      font-size: 38px;
+      margin-bottom: 38px;
+      color: #111827;
     }
 
-    section h3 {
+    .content-box {
+      max-width: 1050px;
+      margin: auto;
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 36px 42px;
+      box-shadow: 0 8px 26px rgba(0,0,0,0.08);
+      border-left: 6px solid #2563eb;
+    }
+
+    .content-box h3 {
       font-size: 26px;
-      color: #333;
-      margin-top: 30px;
+      margin-top: 0;
+      color: #1f2933;
     }
 
-    section p, section li {
+    .content-box p,
+    .content-box li {
       font-size: 19px;
       line-height: 1.8;
+      color: #374151;
       text-align: justify;
     }
 
-    ul {
-      max-width: 900px;
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      max-width: 1050px;
       margin: auto;
     }
 
-    .publication-item, .project-item {
-      max-width: 1000px;
-      margin: 30px auto;
+    .mini-card {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border-top: 5px solid #2563eb;
     }
 
-    .publication-title, .project-title {
+    .mini-card h3 {
       font-size: 24px;
+      margin-top: 0;
+    }
+
+    .mini-card p,
+    .mini-card li {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #374151;
+    }
+
+    .skills-grid {
+      max-width: 1050px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      font-size: 18px;
       font-weight: bold;
-      color: #333;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+      color: #1f2933;
+    }
+
+    .project-highlight {
+      max-width: 1050px;
+      margin: auto;
+      background-color: #111827;
+      color: white;
+      border-radius: 18px;
+      padding: 42px;
+      box-shadow: 0 12px 34px rgba(0,0,0,0.18);
+    }
+
+    .project-highlight h3 {
+      font-size: 30px;
+      margin-top: 0;
+      color: white;
+    }
+
+    .project-highlight p,
+    .project-highlight li {
+      font-size: 19px;
+      line-height: 1.8;
+      color: #e5e7eb;
+      text-align: justify;
     }
 
     .button {
       display: inline-block;
-      padding: 12px 22px;
-      background-color: #5a5f7d;
+      margin-top: 18px;
+      padding: 13px 24px;
+      background-color: #2563eb;
       color: white;
       text-decoration: none;
-      border-radius: 5px;
-      margin-top: 15px;
-      font-size: 18px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 17px;
     }
 
     .button:hover {
-      background-color: #3f435d;
+      background-color: #1d4ed8;
+    }
+
+    .contact-box {
+      text-align: center;
+      max-width: 850px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 38px;
+      border-radius: 16px;
+      box-shadow: 0 8px 26px rgba(0,0,0,0.08);
+    }
+
+    .contact-box p {
+      font-size: 19px;
+      line-height: 1.8;
+    }
+
+    .contact-box a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     footer {
       text-align: center;
-      padding: 25px;
-      background-color: #eef5f4;
+      padding: 28px;
+      background-color: #111827;
+      color: white;
       font-size: 16px;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
       header {
+        padding: 18px 25px;
         flex-direction: column;
         gap: 15px;
       }
@@ -217,24 +329,41 @@
       nav {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 15px;
       }
 
-      .home-section {
-        flex-direction: column;
-        padding: 35px 25px;
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 45px 28px;
       }
 
       .profile-img {
         width: 300px;
-        height: 380px;
+        height: 390px;
+      }
+
+      .hero-text h1 {
+        font-size: 38px;
+        text-align: center;
+      }
+
+      .hero-text h2 {
+        text-align: center;
+        font-size: 21px;
       }
 
       section {
-        padding: 45px 30px;
+        padding: 50px 25px;
       }
 
-      .about-box p {
-        font-size: 18px;
+      .two-column,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .content-box,
+      .project-highlight {
+        padding: 28px;
       }
     }
   </style>
@@ -243,215 +372,193 @@
 <body>
 
   <header>
-    <div class="site-name">Salman Shakib</div>
+    <div class="brand">Salman Shakib</div>
 
     <nav>
       <a href="#home">Home</a>
 
       <div class="dropdown">
-        <button class="dropbtn">About ▼</button>
+        <button class="dropbtn">About ▾</button>
         <div class="dropdown-content">
-          <a href="#professional-experience">Professional Experience</a>
+          <a href="#experience">Professional Experience</a>
           <a href="#education">Education History</a>
-          <a href="#research-skills">Research Skills</a>
-          <a href="#extracurricular">Extra Curricular Activities</a>
+          <a href="#skills">Research Skills</a>
+          <a href="#activities">Leadership & Activities</a>
           <a href="#achievements">Achievements</a>
         </div>
       </div>
 
-      <a href="#publications">Publications</a>
-
-      <div class="dropdown">
-        <button class="dropbtn">Projects ▼</button>
-        <div class="dropdown-content">
-          <a href="#project-bdhs">Thermal Care of Newborns</a>
-          <a href="#project-antenatal">Antenatal Care Coverage</a>
-        </div>
-      </div>
-
+      <a href="#project">Research Project</a>
       <a href="#cv">CV</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main id="home" class="home-section">
-    <div>
+  <main id="home" class="hero">
+    <div class="profile-card">
       <img src="profile.jpg" alt="Salman Shakib" class="profile-img">
     </div>
 
-    <div class="about-box">
-      <h1>About Me</h1>
+    <div class="hero-text">
+      <h1>Salman Shakib</h1>
+      <h2>MS Statistics Student | Graduate Teaching Assistant</h2>
 
       <p>
-        I am Salman Shakib, an MS Statistics student at the University of North Florida
-        and a Graduate Teaching Assistant in the Department of Mathematics and Statistics.
-        My academic background includes a BSc in Statistics from the University of Dhaka.
-        My interests include applied statistics, biostatistics, public health data analysis,
-        regression modeling, survey data analysis, and statistical education.
+        I am an MS Statistics student at the University of North Florida and a Graduate Teaching
+        Assistant in the Department of Mathematics and Statistics. My academic background includes
+        a BSc in Statistics from the University of Dhaka. My interests include applied statistics,
+        biostatistics, public health data analysis, regression modeling, survey data analysis, and
+        statistical education.
       </p>
 
-      <div class="icons">
-        <a class="linkedin" href="#" target="_blank">in</a>
-        <a class="researchgate" href="#" target="_blank">RG</a>
-        <a class="email" href="mailto:salmanshakibpubg@gmail.com">@</a>
-        <a class="github" href="https://github.com/Salmanshakib09" target="_blank">GH</a>
-        <a class="cvicon" href="#cv">CV</a>
+      <div class="quick-links">
+        <a href="https://www.linkedin.com/in/salman-shakib" target="_blank">LinkedIn</a>
+        <a href="mailto:salmanshakibpubg@gmail.com">Email</a>
+        <a href="https://github.com/Salmanshakib09" target="_blank">GitHub</a>
+        <a href="#cv">CV</a>
       </div>
     </div>
   </main>
 
-  <section id="professional-experience">
-    <h2>Professional Experience</h2>
+  <section id="experience">
+    <h2 class="section-title">Professional Experience</h2>
 
-    <h3>Graduate Teaching Assistant</h3>
+    <div class="content-box">
+      <h3>Graduate Teaching Assistant</h3>
 
-    <p>
-      Department of Mathematics and Statistics, University of North Florida.
-      As a Graduate Teaching Assistant, I support undergraduate students in mathematics
-      and statistics courses. My responsibilities include assisting with recitations,
-      grading assignments and quizzes, helping students understand statistical concepts,
-      and supporting instruction in probability, hypothesis testing, regression, and
-      core statistical methods.
-    </p>
+      <p>
+        Department of Mathematics and Statistics, University of North Florida.
+        As a Graduate Teaching Assistant, I support undergraduate students in mathematics and statistics
+        courses. My responsibilities include leading recitations, assisting students with statistical
+        concepts, grading assignments and quizzes, and helping students strengthen their understanding
+        of probability, hypothesis testing, regression, and core statistical methods.
+      </p>
+    </div>
   </section>
 
   <section id="education">
-    <h2>Education History</h2>
+    <h2 class="section-title">Education History</h2>
 
-    <h3>University of North Florida</h3>
-    <p>
-      MS in Statistics.
-    </p>
+    <div class="two-column">
+      <div class="mini-card">
+        <h3>University of North Florida</h3>
+        <p>
+          MS in Statistics
+        </p>
+        <p>
+          Graduate Teaching Assistant, Department of Mathematics and Statistics.
+        </p>
+      </div>
 
-    <h3>University of Dhaka</h3>
-    <p>
-      BSc in Statistics.
-    </p>
+      <div class="mini-card">
+        <h3>University of Dhaka</h3>
+        <p>
+          BSc in Statistics
+        </p>
+        <p>
+          Undergraduate training in statistical theory, applied statistics, public health data analysis,
+          and statistical computing.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section id="research-skills">
-    <h2>Research Skills</h2>
+  <section id="skills">
+    <h2 class="section-title">Research Skills</h2>
 
-    <ul>
-      <li>Public health data analysis</li>
-      <li>Survey data analysis</li>
-      <li>Regression analysis</li>
-      <li>Chi-square test and hypothesis testing</li>
-      <li>Descriptive statistics and data visualization</li>
-      <li>Statistical modeling</li>
-      <li>R, SAS, SPSS, Stata, Microsoft Excel</li>
-    </ul>
+    <div class="skills-grid">
+      <div class="skill">R & RStudio</div>
+      <div class="skill">SAS</div>
+      <div class="skill">SPSS</div>
+      <div class="skill">Stata</div>
+      <div class="skill">Microsoft Excel</div>
+      <div class="skill">Regression Analysis</div>
+      <div class="skill">Survey Data Analysis</div>
+      <div class="skill">Hypothesis Testing</div>
+      <div class="skill">Public Health Data Analysis</div>
+    </div>
   </section>
 
-  <section id="extracurricular">
-    <h2>Extra Curricular Activities</h2>
+  <section id="activities">
+    <h2 class="section-title">Leadership & Activities</h2>
 
-    <p>
-      I have actively participated in cricket throughout my academic life and served as
-      captain of my school cricket team and the statistics department cricket team. These
-      experiences helped me develop leadership, teamwork, discipline, communication, and
-      decision-making skills.
-    </p>
+    <div class="content-box">
+      <h3>Cricket, Teamwork, and Leadership</h3>
+
+      <p>
+        I have actively participated in cricket throughout my academic life and served as captain of
+        my school cricket team and the statistics department cricket team. These experiences helped me
+        develop leadership, discipline, teamwork, communication, and decision-making skills.
+      </p>
+    </div>
   </section>
 
   <section id="achievements">
-    <h2>Achievements</h2>
+    <h2 class="section-title">Achievements</h2>
 
-    <ul>
-      <li>Accepted into the MS Statistics program at the University of North Florida.</li>
-      <li>Graduate Teaching Assistant in the Department of Mathematics and Statistics.</li>
-      <li>Completed BSc in Statistics from the University of Dhaka.</li>
-      <li>Conducted undergraduate research using nationally representative BDHS data.</li>
-    </ul>
-  </section>
-
-  <section id="publications">
-    <h2>Publications</h2>
-
-    <div class="publication-item">
-      <p class="publication-title">
-        Thermal Care of Newborns: Exploring Socio-Economic and Demographic Factors in Bangladesh
-      </p>
-
-      <p>
-        Undergraduate research project based on Bangladesh Demographic and Health Survey 2017–18.
-        This project analyzed socio-economic and demographic factors associated with thermal care
-        practices for newborns in Bangladesh.
-      </p>
-
-      <p>
-        Status: Research project / manuscript information can be updated here.
-      </p>
-    </div>
-
-    <div class="publication-item">
-      <p class="publication-title">
-        Women’s Decision-Making Autonomy as a Mitigating Factor for Complete Antenatal Care Coverage
-      </p>
-
-      <p>
-        Public health research project using BDHS 2017–18 data, focusing on maternal healthcare,
-        women’s autonomy, and antenatal care coverage in Bangladesh.
-      </p>
-
-      <p>
-        Status: Research project / manuscript information can be updated here.
-      </p>
+    <div class="content-box">
+      <ul>
+        <li>Accepted into the MS Statistics program at the University of North Florida.</li>
+        <li>Serving as a Graduate Teaching Assistant in the Department of Mathematics and Statistics.</li>
+        <li>Completed BSc in Statistics from the University of Dhaka.</li>
+        <li>Conducted undergraduate research using Bangladesh Demographic and Health Survey 2017–18 data.</li>
+      </ul>
     </div>
   </section>
 
-  <section id="project-bdhs">
-    <h2>Project: Thermal Care of Newborns in Bangladesh</h2>
+  <section id="project">
+    <h2 class="section-title">Research Project</h2>
 
-    <div class="project-item">
+    <div class="project-highlight">
+      <h3>Thermal Care of Newborns in Bangladesh</h3>
+
       <p>
-        This project investigated socio-economic and demographic factors associated with thermal care
-        practices for newborns in Bangladesh using BDHS 2017–18 data.
+        This research project investigated socio-economic and demographic factors associated with
+        thermal care practices for newborns in Bangladesh using the Bangladesh Demographic and Health
+        Survey 2017–18.
       </p>
 
       <p>
-        Methods included descriptive statistics, chi-square tests, regression analysis, and interpretation
-        of survey-based public health findings.
-      </p>
-    </div>
-  </section>
-
-  <section id="project-antenatal">
-    <h2>Project: Antenatal Care Coverage in Bangladesh</h2>
-
-    <div class="project-item">
-      <p>
-        This project examined women’s decision-making autonomy and its relationship with complete
-        antenatal care coverage using BDHS 2017–18 data.
+        The project focused on public health data analysis and examined how demographic and
+        socio-economic characteristics are related to newborn thermal care practices.
       </p>
 
-      <p>
-        The project focused on maternal health, survey data analysis, demographic factors, and applied
-        statistical methods for public health research.
-      </p>
+      <ul>
+        <li>Dataset: Bangladesh Demographic and Health Survey 2017–18</li>
+        <li>Methods: Descriptive statistics, chi-square tests, and regression analysis</li>
+        <li>Research area: Applied statistics, biostatistics, maternal and child health</li>
+        <li>Tools: R, Stata, SPSS, and Microsoft Excel</li>
+      </ul>
     </div>
   </section>
 
   <section id="cv">
-    <h2>CV</h2>
+    <h2 class="section-title">CV</h2>
 
-    <p>
-      My CV will be added here soon.
-    </p>
+    <div class="content-box">
+      <h3>Curriculum Vitae</h3>
 
-    <a class="button" href="#">Download CV</a>
+      <p>
+        My CV will be added here soon. This section will include my education, research experience,
+        teaching experience, technical skills, and academic achievements.
+      </p>
+
+      <a class="button" href="#">Download CV</a>
+    </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
+    <h2 class="section-title">Contact</h2>
 
-    <p>Email: salmanshakibpubg@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/Salmanshakib09" target="_blank">github.com/Salmanshakib09</a></p>
-    <p>LinkedIn: Add your LinkedIn link here</p>
+    <div class="contact-box">
+      <p>Email: <a href="mailto:salmanshakibpubg@gmail.com">salmanshakibpubg@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/salman-shakib" target="_blank">www.linkedin.com/in/salman-shakib</a></p>
+      <p>GitHub: <a href="https://github.com/Salmanshakib09" target="_blank">github.com/Salmanshakib09</a></p>
+    </div>
   </section>
 
   <footer>
-    © 2026 Salman Shakib
+    © 2026 Salman Shakib | Statistics Portfolio
   </footer>
 
 </body>
